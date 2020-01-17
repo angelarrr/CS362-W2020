@@ -34,6 +34,19 @@ def get_box(nV):
     return box
 
 
+def get_num_cursed(player_names):
+    nC = -10 + 10 * len(player_names)
+    return nC
+
+
+def get_num_victory(player_names):
+    if len(player_names) > 2:
+        nV = 12
+    else:
+        nV = 8
+    return nV
+
+
 def get_players(player_names):
     # Construct the Player objects
     players = []
@@ -75,14 +88,5 @@ def get_supply_order():
     return supply_order
 
 
-def get_num_cursed(player_names):
-    nC = -10 + 10 * len(player_names)
-    return nC
-
-
-def get_num_victory(player_names):
-    if len(player_names) > 2:
-        nV = 12
-    else:
-        nV = 8
-    return nV
+def init_trash():
+    return []

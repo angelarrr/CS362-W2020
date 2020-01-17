@@ -3,26 +3,28 @@
 Created on Tue Jan 14 2020
 
 @author: kwonan
+
+Test Scenario #1
 """
 
 from projects.kwonan.dominion import Dominion
 from projects.kwonan.dominion import testUtility
 
 # Get player names
-player_names = ["Annie", "*Ben", "*Carla"]
+player_names = ["*Annie", "*Ben", "*Carla"]
 
 # Construct player objects
 players = testUtility.get_players(player_names)
 
 # Initialize the trash
-trash = []
+trash = testUtility.init_trash()
 
 # Number of curses and victory cards
 nV = testUtility.get_num_victory(player_names)
 nC = testUtility.get_num_cursed(player_names)
 
 # Define box
-box = testUtility.get_box(nV)
+box = testUtility.get_box(20)
 
 # Get supply and supply order
 supply = testUtility.get_supply(box, player_names, nV, nC)

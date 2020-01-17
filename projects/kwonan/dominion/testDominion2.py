@@ -3,6 +3,8 @@
 Created on Tue Jan 14 2020
 
 @author: kwonan
+
+Test Scenario #2
 """
 
 from projects.kwonan.dominion import Dominion
@@ -15,7 +17,7 @@ player_names = ["Annie", "*Ben", "*Carla"]
 players = testUtility.get_players(player_names)
 
 # Initialize the trash
-trash = []
+trash = testUtility.init_trash()
 
 # Number of curses and victory cards
 nV = testUtility.get_num_victory(player_names)
@@ -26,6 +28,7 @@ box = testUtility.get_box(nV)
 
 # Get supply and supply order
 supply = testUtility.get_supply(box, player_names, nV, nC)
+supply["Silver"] = [Dominion.Gold()] * 40
 supply_order = testUtility.get_supply_order()
 
 # Play the game
